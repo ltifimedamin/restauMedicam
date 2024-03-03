@@ -1,0 +1,30 @@
+<div class="templatemo-content-container">
+    <button class="btn btn-success mb-3" (click)="AjouterPlat()">Ajouter Plat</button>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>nomPlat</th>
+                <th>DescPlat</th>
+                <th>prixPlat</th>
+                
+                <th>datePlat</th>
+                <th>typePlat</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of plats">
+                <td>{{ item.nomPlat }}</td>
+                <td>{{ item.DescPlat }}</td>
+                <td>{{ item.prixPlat }}</td>
+                <td>{{ item.datePlat }}</td>
+                <td>{{ item.typePlat }}</td>
+                <td>
+                    <button (click)="modifierPlat(item.idPlat)" class="btn btn-info">Edit</button>
+
+                    <button (click)="delete(item.idPlat)" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

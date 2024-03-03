@@ -1,0 +1,28 @@
+<div class="templatemo-content-container">
+    <button class="btn btn-success mb-3" (click)="Ajouter()">Ajouter Restaurant</button>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>nom Restaurant</th>
+                <th>Address</th>
+                <th>Image</th>
+                <th>phone number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of restaurants">
+                <td>{{ item.nomResto }}</td>
+                <td>{{ item.address }}</td>
+                <td>{{ item.image }}</td>
+                <td>{{ item.tel }}</td>
+
+                <td>
+                    <button (click)="modifier(item.idRestaurant)" class="btn btn-info">Edit</button>
+
+                    <button (click)="delete(item.idRestaurant)" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

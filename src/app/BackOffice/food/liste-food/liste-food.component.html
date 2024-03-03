@@ -1,0 +1,30 @@
+<div class="templatemo-content-container">
+    <button class="btn btn-success mb-3" (click)="Ajouter()">Ajouter Food</button>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>nomFood</th>
+              
+                <th>calorie</th>
+                <th>dateFood</th>
+                <th>quantite</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of foods">
+                <td>{{ item.nomFood }}</td>
+               
+                <td>{{ item.calorie }}</td>
+                <td>{{ item.dateFood }}</td>
+                <td>{{ item.quantite }}</td>
+                <td>
+                    <button (click)="modifierM(item.idFood)" class="btn btn-info">Edit</button>
+
+                    <button (click)="delete(item.idFood)" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,30 @@
+<form>
+    <div class="form-group">
+      <label for="nomEtab">nomPlat</label>
+      <input type="text" class="form-control"   [(ngModel)]="plat.nomPlat" [ngModelOptions]="{standalone: true}" placeholder="nomPlat">
+    </div>
+    <div class="form-group">
+      <label for="numFixe">DescPlat</label>
+      <input type="text" class="form-control" [(ngModel)]="plat.descPlat" [ngModelOptions]="{standalone: true}"  placeholder="DescPlat">
+    </div>
+    <div class="form-group">
+      <label for="typePlat">Type plat</label>
+      <select class="form-control" [(ngModel)]="plat.typePlat" [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let type of typesPlat" [value]="type">{{type}}</option>
+      </select>
+    </div>
+    
+    <mat-form-field class="form-group">
+      <input matInput [(ngModel)]="plat.datePlat" [ngModelOptions]="{ standalone: true }" [matDatepicker]="datepicker" placeholder="Sélectionner une date">
+      <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+      <mat-datepicker #datepicker></mat-datepicker>
+    </mat-form-field>
+     
+  
+      <div class="form-group">
+        <label for="prixNuit">prix Plat</label>
+        <input type="number" class="form-control"  [(ngModel)]="plat.prixPlat" [ngModelOptions]="{standalone: true}" placeholder="prix Plat">
+      </div>
+
+    <button type="submit" class="btn btn-primary" (click)="ajouterPlat()">Ajouter</button>
+  </form>
