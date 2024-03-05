@@ -1,0 +1,47 @@
+<form>
+  <div [formGroup]="preparedMealsFormGroup">
+    <div formGroupName="breakfast">
+      <div formArrayName="entree">
+        <label>Entrées</label>
+        <div *ngFor="let entree of entrees.controls; let i = index">
+          <div [formGroupName]="i">
+            <mat-checkbox formControlName="checked">
+              {{ entree.get("title")?.value }}
+            </mat-checkbox>
+          </div>
+        </div>
+      </div>
+      <div formArrayName="Plat">
+        <label>Plat principale</label>
+        <div *ngFor="let plat of platPrincipales.controls; let i = index">
+          <div [formGroupName]="i">
+            <mat-checkbox formControlName="checked">
+              {{ plat.get("title")?.value }}
+            </mat-checkbox>
+          </div>
+        </div>
+      </div>
+      <div formArrayName="dessert">
+        <label>Dessert</label>
+        <div *ngFor="let dessert of desserts.controls; let i = index">
+          <div [formGroupName]="i">
+            <mat-checkbox formControlName="checked">
+              {{ dessert.get("title")?.value }}
+            </mat-checkbox>
+          </div>
+        </div>
+      </div>
+      <div formArrayName="boisson">
+        <label>boisson</label>
+        <div *ngFor="let boisson of boissons.controls; let i = index">
+          <div [formGroupName]="i">
+            <mat-checkbox formControlName="checked">
+              {{ boisson.get("title")?.value }}
+            </mat-checkbox>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button>Valider</button>
+  </div>
+</form>

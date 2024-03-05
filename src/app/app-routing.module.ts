@@ -20,98 +20,100 @@ import { UpdatePlatComponent } from './BackOffice/Plat/update-plat/update-plat.c
 import { AjouterFoodComponent } from './BackOffice/food/ajouter-food/ajouter-food.component';
 import { ListeFoodComponent } from './BackOffice/food/liste-food/liste-food.component';
 import { ModifierFoodComponent } from './BackOffice/food/modifier-food/modifier-food.component';
+import { RepasComponent } from './FrontOffice/repas/repas.component';
 
 const routes: Routes = [
- { path:"",
-  component:AllTempleteFrontComponent,
-  children:[
-    {
-      path:"",
-      component:HomeFrontComponent
-    },
-    {
-      path:"login",
-      component:LoginComponent
-    },
-    {
-      path:"etablissment",
-      component:AfficheEtablissmentFrontComponent
-    },
-  
-  ]
- },
+  {
+    path: '',
+    component: AllTempleteFrontComponent,
+    children: [
+      {
+        path: '',
+        component: HomeFrontComponent,
+      },
+      {
+        path: 'login',
+        component: LoginComponent,
+      },
+      {
+        path: 'etablissment',
+        component: AfficheEtablissmentFrontComponent,
+      },
+      {
+        path: 'selectionnerRepas',
+        component: RepasComponent,
+      },
+    ],
+  },
 
-{
-  path:"admin",
-  component:AllTemplateBackComponent,
-  children:[
-    {
-      path:"listeEtablissement",
-      component:ListeetablissementComponent
-    },
-    {
-      path:"ajouterEtablissement",
-      component:AjouterEtablissementComponent
-    },
-    {
-      path:"modifierEtablissement/:id",
-      component:ModifieretablissementComponent
-    },
-    {
-      path:"listeMedicaments",
-      component:AfficheMedicamentComponent
-    }, 
-    {
-      path:"ajouterMedicament",
-      component:AjouterMedicamentComponent
-    },
-    {
-      path:"modifierMedicament/:id",
-      component:ModifierMedicamentComponent
-    },
-    
-    { path:"listerestaurants",
-    component:AfficheRestaurantComponent},
-    {
-      path:"ajouterRestaurant",
-      component:AjouterRestaurantComponent
-    },
-    {
-      path:"modifierRestaurant/:id",
-      component:ModifierRestaurantComponent
-    },
-    {
-      path:"listePlats",
-      component:AffichePlatComponent
-    },
-    {
-      path:"ajouterPlats",
-      component:AjouterPlatComponent
-    },
-    {
-      path:"modifierPlat/:id",
-      component:UpdatePlatComponent
-    },
-    {
-      path:"ajouterFood",
-      component:AjouterFoodComponent
-    },
-    {
-      path:"listeFoods",
-      component:ListeFoodComponent
-    },
-    {
-      path:"modifierFood/:id",
-      component:ModifierFoodComponent
-    },
-  ]
-},
+  {
+    path: 'admin',
+    component: AllTemplateBackComponent,
+    children: [
+      {
+        path: 'listeEtablissement',
+        component: ListeetablissementComponent,
+      },
+      {
+        path: 'ajouterEtablissement',
+        component: AjouterEtablissementComponent,
+      },
+      {
+        path: 'modifierEtablissement/:id',
+        component: ModifieretablissementComponent,
+      },
+      {
+        path: 'listeMedicaments',
+        component: AfficheMedicamentComponent,
+      },
+      {
+        path: 'ajouterMedicament',
+        component: AjouterMedicamentComponent,
+      },
+      {
+        path: 'modifierMedicament/:id',
+        component: ModifierMedicamentComponent,
+      },
 
-
+      { path: 'listerestaurants', component: AfficheRestaurantComponent },
+      {
+        path: 'ajouterRestaurant',
+        component: AjouterRestaurantComponent,
+      },
+      {
+        path: 'modifierRestaurant/:id',
+        component: ModifierRestaurantComponent,
+      },
+      {
+        path: 'listePlats',
+        component: AffichePlatComponent,
+      },
+      {
+        path: 'ajouterPlats',
+        component: AjouterPlatComponent,
+      },
+      {
+        path: 'modifierPlat/:id',
+        component: UpdatePlatComponent,
+      },
+      {
+        path: 'ajouterFood',
+        component: AjouterFoodComponent,
+      },
+      {
+        path: 'listeFoods',
+        component: ListeFoodComponent,
+      },
+      {
+        path: 'modifierFood/:id',
+        component: ModifierFoodComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

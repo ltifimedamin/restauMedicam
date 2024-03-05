@@ -11,7 +11,7 @@ import { HeaderFrontComponent } from './FrontOffice/header-front/header-front.co
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeFrontComponent } from './FrontOffice/home-front/home-front.component';
 import { LoginComponent } from './FrontOffice/login/login.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AjouterEtablissementComponent } from './BackOffice/ajouter-etablissement/ajouter-etablissement.component';
 import { ListeetablissementComponent } from './BackOffice/listeetablissement/listeetablissement.component';
 import { ModifieretablissementComponent } from './BackOffice/modifieretablissement/modifieretablissement.component';
@@ -34,6 +34,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { RepasComponent } from './FrontOffice/repas/repas.component';
 
 @NgModule({
   declarations: [
@@ -62,8 +64,7 @@ import { MatIconModule } from '@angular/material/icon';
     ListeFoodComponent,
     AjouterFoodComponent,
     ModifierFoodComponent,
-   
-    
+    RepasComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,9 +77,9 @@ import { MatIconModule } from '@angular/material/icon';
     MatInputModule,
     MatNativeDateModule,
     MatIconModule,
-
+    MatCheckboxModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
